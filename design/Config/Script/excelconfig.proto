@@ -1,0 +1,93 @@
+syntax = "proto3";
+
+message DTItemNum 
+{
+	int32 ItemId = 1;
+	int32 ItemNum = 2;
+}
+
+message DTVector2 
+{
+	double X = 1;
+	double Y = 2;
+}
+
+message Global 
+{
+	int32 everydayUpdateTime = 1;
+	string roleNameAutoGen = 2;
+	int32 roleNameMaxLength = 3;
+	int32 roleNameMinLength = 4;
+	bool superAccountSwitch = 5;
+	bool roleNameRepated = 6;
+	int32 friendReqMaxCnt = 7;
+	int32 friendMaxCnt = 8;
+	int32 chatGamerMaxCnt = 9;
+	int32 chatWorldMaxCnt = 10;
+	int32 gamerMailMaxCnt = 11;
+	int32 worldMailMaxCnt = 12;
+	bool wordCheck = 13;
+}
+
+message Loader 
+{
+	int32 id = 1;
+	string name = 2;
+	bool isShowCircle = 3;
+}
+
+message Menu 
+{
+	int32 id = 1;
+	string zh_cn_name = 2;
+	string icon = 3;
+	string moduleNameIcon = 4;
+	string moduleName = 5;
+	int32 layer = 6;
+	repeated int32 topInformation = 7;
+	int32 closeOtherType = 8;
+	bool closeHomeWindow = 9;
+	bool isAutoOpenHomeWindow = 10;
+	int32 cacheTime = 11;
+	int32 loaderId = 12;
+	int32 barType = 13;
+	int32 barIndex = 14;
+	int32 openAnimation = 15;
+	int32 closeAnimation = 16;
+	int32 redType = 17;
+}
+
+message Msg 
+{
+	int32 id = 1;
+	string key = 2;
+	string module = 3;
+	string name = 4;
+	string zh_cn_notice = 5;
+	string en_notice = 6;
+}
+
+message Unlock 
+{
+	int32 id = 1;
+	string zh_cn_name = 2;
+	int32 menuId = 3;
+	int32 menuIndexId = 4;
+	int32 showType = 5;
+	int32 showLevel = 6;
+	int32 openLevel = 7;
+	int32 checkPoint = 8;
+	int32 openShow = 9;
+	int32 showIcon = 10;
+}
+
+
+message ConfigMng
+{
+	Global Global = 1;
+	map<int32,Loader> Loader = 2;
+	map<int32,Menu> Menu = 3;
+	map<int32,Msg> Msg = 4;
+	map<int32,Unlock> Unlock = 5;
+
+}
