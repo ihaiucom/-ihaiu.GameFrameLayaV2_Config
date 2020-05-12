@@ -1,5 +1,5 @@
 import GameConfig from "./GameConfig";
-import ConfigManager from "./_WillRemove/ConfigManager";
+import ConfigManager from "./Config/ConfigManager";
 class Main {
 	constructor() {
 		//根据IDE设置初始化引擎		

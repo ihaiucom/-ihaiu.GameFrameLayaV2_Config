@@ -141,6 +141,20 @@ message Global
 
 	return configStructStr
 
+def StringPartion(s):
+	arr = s.split('_')
+	newArr = []
+	for i in range(len(arr)):
+		if i == 0:
+			item = arr[i][0:1].lower() + arr[i][1:]
+			newArr.append(item)
+		else:
+			item = arr[i][0:1].capitalize() + arr[i][1:]
+			newArr.append(item)
+	ss = ""
+	ss = ss.join(newArr)
+	return ss
+	
 def GenExcel2Pb(indir, noPB):
 	selfDefInfoStr = ""
 	selfDefInfo = []
@@ -192,9 +206,7 @@ declare namespace excelconfigSources
 		langKeys = configFieldLangMap[v]
 		langFieldList = ""
 		for langKey in langKeys:
-			langePBFileName = langKey.replace("_", " ")
-			langePBFileName = langePBFileName.title().replace(" ", "")
-			langePBFileName = langePBFileName[0:1].lower() + langePBFileName[1:]
+			langePBFileName = StringPartion(langKey)
 			langeFileName = langKey.replace("zh_cn_", "")
 			langField = """
 	get %s():string

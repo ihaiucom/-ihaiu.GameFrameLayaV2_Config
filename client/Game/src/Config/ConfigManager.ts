@@ -1,10 +1,10 @@
 
-import ConfigLoaderInterface from "../Config/Interfaces/ConfigLoaderInterface";
+import ConfigLoaderInterface from "./Interfaces/ConfigLoaderInterface";
 
-import ConfigManagerExpressionList from "../Config/ConfigManagerExpressionList";
-import { ExcelConfigManager } from "../Config/ExcelConfigManager";
-import ExcelConfigReader from "../Config/ExcelConfigReader";
-import ConfigApi from "../Config/ConfigApi";
+import ConfigManagerExpressionList from "./ConfigManagerExpressionList";
+import { ExcelConfigManager } from "./ExcelConfigManager";
+import ExcelConfigReader from "./ExcelConfigReader";
+import ConfigApi from "./ConfigApi";
 
 export enum EnumExcelConfigType
 {
