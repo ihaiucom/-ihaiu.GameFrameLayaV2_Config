@@ -1,3 +1,4 @@
+import ConfigManager from "../Config/ConfigManager";
 
 
 export default class Res
@@ -113,21 +114,6 @@ export default class Res
         return Res.actorBodyIcon + `${actorName}.png`;
     }
 
-    static getDraugHeroIcon(heroid: number): string
-    {   
-        // GJC 提审服，暂时处理资源
-        let ids = Game.channel.serverItem.shieldHero;
-        if (ids.indexOf(heroid) != -1) 
-        {
-            heroid = 1001;
-        } 
-        return Res.draugHeroIcon + `${heroid}.png`;
-    }
-
-    static getDraugIcon(draugtype: number): string
-    {
-        return Res.draugIcon + `${draugtype}.png`;
-    }
 
     // static getPropertyIcon(proptype: number): string
     // {
@@ -244,8 +230,8 @@ export default class Res
     /** 获取Avatar表里的资源 */
     static GetAvatarSource(avatarid:number)
     {
-        let config = Game.config.avatar.getConfig(avatarid);
-        return Res.fspriteassets + config.icon + ".png";
+        // let config = ConfigManager.Instance.avatar.getConfig(avatarid);
+        // return Res.fspriteassets + config.icon + ".png";
     }
 
 
